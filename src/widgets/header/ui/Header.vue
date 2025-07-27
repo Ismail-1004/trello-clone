@@ -2,6 +2,10 @@
 import { UserDropdown } from "@/features/header/user";
 import { AddTaskButton } from "@/features/header/add-task";
 import { ThemeSwitcher } from "@/features/header/theme-switcher";
+
+import { useColumnStore } from '@/entities/column/model'
+
+const columnStore = useColumnStore()
 </script>
 
 <template>
@@ -11,7 +15,7 @@ import { ThemeSwitcher } from "@/features/header/theme-switcher";
         🏗️ TaskBoard
       </q-toolbar-title>
       <div class="header__nav-btns">
-        <AddTaskButton />
+        <AddTaskButton v-if="columnStore.columns.length" />
         <UserDropdown />
         <ThemeSwitcher />
       </div>

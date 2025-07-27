@@ -5,5 +5,6 @@ import { BoardLayout } from '@/widgets/board';
 <template>
     <div>
         <BoardLayout />
+        
     </div>
 </template>
