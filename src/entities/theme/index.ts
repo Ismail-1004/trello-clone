@@ -1,0 +1,1 @@
+export { useThemeModel } from './model'

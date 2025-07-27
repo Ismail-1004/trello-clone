@@ -1,0 +1,1 @@
+export { default as BoardLayout } from './ui/BoardLayout.vue'

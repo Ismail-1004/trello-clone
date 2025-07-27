@@ -1,0 +1,33 @@
+@import "quasar-variables.sass";
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 0 25px;
+}
+
+body {
+  background: #0079bf;
+}
+
+.navigation__btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: var(--text-white);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+html, body, #q-app {
+  height: 100%;
+  margin: 0;
+}
