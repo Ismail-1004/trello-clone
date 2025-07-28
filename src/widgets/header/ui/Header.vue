@@ -1,4 +1,6 @@
-<script setup>
+<script setup lang="ts">
+import { onMounted, ref } from "vue";
+
 import { UserDropdown } from "@/features/header/user";
 import { AddTaskButton } from "@/features/header/add-task";
 import { ThemeSwitcher } from "@/features/header/theme-switcher";
@@ -6,6 +8,13 @@ import { ThemeSwitcher } from "@/features/header/theme-switcher";
 import { useColumnStore } from '@/entities/column/model'
 
 const columnStore = useColumnStore()
+
+const storedUser = ref<{ id: string, login: string, password: string } | null>(null)
+
+onMounted(() => {
+  const stored = localStorage.getItem('user')
+  storedUser.value = stored ? JSON.parse(stored) : null
+})
 </script>
 
 <template>
@@ -16,7 +25,7 @@ const columnStore = useColumnStore()
       </q-toolbar-title>
       <div class="header__nav-btns">
         <AddTaskButton v-if="columnStore.columns.length" />
-        <UserDropdown />
+        <UserDropdown :user="storedUser" />
         <ThemeSwitcher />
       </div>
     </q-toolbar>

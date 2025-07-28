@@ -3,6 +3,6 @@ export interface Task {
   title: string;
   description: string;
   dueDate: string;
-  status: "not_started" | "in_progress" | "done";
+  status: string
   columnId: string;
 }

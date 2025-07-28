@@ -7,7 +7,11 @@ export type Column = {
 }
 
 export const useColumnStore = defineStore('columns', () => {
-    const columns = ref<Column[]>([])
+    const columns = ref<Column[]>([
+        { id: 'not_started', title: 'Не начато' },
+        { id: 'in_progress', title: 'В процессе' },
+        { id: 'done', title: 'Выполнено' },
+    ])
 
     const addColumn = (title: string) => {
         columns.value.push({
@@ -16,13 +20,8 @@ export const useColumnStore = defineStore('columns', () => {
         })
     }
 
-    const removeColumn = (id: string) => {
-        columns.value = columns.value.filter(col => col.id !== id)
-    }
-
     return {
         columns,
-        addColumn,
-        removeColumn
+        addColumn
     }
 })

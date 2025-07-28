@@ -4,6 +4,7 @@ import { useColumnStore } from '@/entities/column/model'
 import { useTasksStore } from '@/entities/task/model'
 import { Column } from '@/entities/column'
 import { DraggbleTask } from '@/features/draggable-task';
+import { TaskFilterPanel } from '@/features/board/taskFilter';
 
 const columnStore = useColumnStore()
 const taskStore = useTasksStore()

@@ -21,6 +21,7 @@ const router = createRouter({
     {
       path: "/",
       component: MainLayout,
+      meta: { requiresAuth: true },
       children: [
         {
           path: "",
@@ -30,5 +31,19 @@ const router = createRouter({
     },
   ],
 });
+
+router.beforeEach((to, from, next) => {
+  const user = localStorage.getItem('user')
+
+  if (to.meta.requiresAuth && !user) {
+    return next('/login')
+  }
+
+  if (to.path === '/login' && user) {
+    return next('/')
+  }
+
+  next()
+})
 
 export default router;

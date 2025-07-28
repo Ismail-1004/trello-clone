@@ -1,3 +1,9 @@
+<script setup>
+import { LoginForm } from '@/widgets/auth'
+</script>
+
 <template>
-    <h1>Login</h1>
+    <div>
+        <LoginForm />
+    </div>
 </template>
