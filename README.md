@@ -1,33 +1,65 @@
-# .
+# 🧩 Trello Clone — Personal Task Manager
 
-This template should help get you started developing with Vue 3 in Vite.
+> Простой, но функциональный менеджер задач, вдохновлённый Trello.  
+> Реализован с использованием **Vue 3**, **Quasar**, **Pinia** и **TypeScript**.
 
-## Recommended IDE Setup
+## 🔐 Упрощённая авторизация
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Для входа в систему вы можете ввести **любой логин и пароль** — это предусмотрено по техническому заданию.  
+Пользовательские данные сохраняются в **Pinia Store**.
 
-## Type Support for `.vue` Imports in TS
+---
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## 🗂 Возможности
 
-## Customize configuration
+### 📋 Экран задач
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- Список задач, созданных текущим пользователем
+- У каждой задачи есть:
+  - Название
+  - Описание
+  - Срок выполнения
+  - Статус: `в процессе`, `не начато`, `выполнено`
+- Drag & Drop для управления задачами
 
-## Project Setup
+### ✏️ Добавление и редактирование задач
 
-```sh
+- Используется модальное окно (`QDialog`)
+- Валидация всех полей обязательна
+- Поддержка редактирования существующих задач
+
+### 🎨 Интерфейс
+
+- Построен на **Quasar Framework**
+- Полностью адаптивный дизайн (мобильные устройства поддерживаются)
+- Поддержка **тёмной и светлой тем**
+
+### 🔔 Уведомления
+
+- Используется `Quasar Notify` для уведомлений об успехе/ошибках
+
+### 🔄 Дополнительно
+
+- **Пагинация** задач
+- Структурирован по **Feature-Sliced Design (FSD)**
+- Готов к **деплою на GitHub Pages, Vercel или Netlify**
+
+---
+
+## 🛠 Технологии
+
+- **Vue 3**
+- **Quasar 2**
+- **TypeScript**
+- **Pinia**
+- **Vue Router**
+- **Composition API**
+- **Vite**
+
+---
+
+## 🚀 Установка и запуск проекта
+
+```bash
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
